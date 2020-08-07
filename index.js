@@ -9,8 +9,12 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 app.set('views','./views');
 app.set('view engine','ejs');
 
-app.get('/',(req,res)=>{
-	res.render('index');
+app.get('/',(req,res){
+	var ipUser = req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress;
+	res.render('index',{ip:ipUser});
 });
 
 const port = 212;
