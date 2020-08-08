@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
-	res.render('index',{ip:ipUser});
+	res.render('index',{ipUser:ipUser});
 });
 
 const port = 212;
