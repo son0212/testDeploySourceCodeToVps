@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 app.set('views','./views');
 app.set('view engine','ejs');
 
-app.get('/',(req,res){
+app.get('/',(req,res)=>{
 	var ipUser = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
