@@ -10,10 +10,7 @@ app.set('views','./views');
 app.set('view engine','ejs');
 
 app.get('/',(req,res)=>{
-	var ipUser = req.headers['x-forwarded-for'] ||
-        req.connection.remoteAddress ||
-        req.socket.remoteAddress ||
-        req.connection.socket.remoteAddress;
+	var ipUser = req.ip;
 	res.render('index',{ipUser:ipUser});
 });
 
