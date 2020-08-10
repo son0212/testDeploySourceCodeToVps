@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
 	res.render('index',{ipUser:ipUser});
 });
 
-const port = 212;
+const port = 80;
 
 app.listen(port,()=>{
 	console.log(`The server has been started at the port: ${port} or http://localhost:${port}`);
